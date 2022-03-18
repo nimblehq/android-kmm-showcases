@@ -1,4 +1,4 @@
-https://github.com/nimblehq/git-template/issues/??
+https://github.com/nimblehq/android-kmm-showcases/issues/??
 
 ## What happened 👀
 
@@ -11,3 +11,5 @@ Describe in details how to test the changes, which solution you tried but did no
 ## Proof Of Work 📹
 
 Show us the implementation: screenshots, gif, etc.
+
+<img src="URL_GOES_HERE" width=300 /> 

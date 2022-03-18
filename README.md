@@ -1,16 +1,17 @@
-# Git Repository Template
+# KMM Showcase
 
-Project repository template to set up all public projects at [Nimble](https://nimblehq.co/)
+This repository contains the useful feature showcases in 
+[Kotlin Multiplatform Mobile](https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html)
 
 ## Usage
 
 Clone the repository
 
-`git clone git@github.com:nimblehq/git-template.git`
+`git clone git@github.com:nimblehq/android-kmm-showcases.git`
 
 ## License
 
-This project is Copyright (c) 2014 and onwards. It is free software,
+This project is Copyright (c) 2022 and onwards. It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: /LICENSE
