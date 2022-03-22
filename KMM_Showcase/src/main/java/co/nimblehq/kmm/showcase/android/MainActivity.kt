@@ -1,20 +1,17 @@
 package co.nimblehq.kmm.showcase.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import co.nimblehq.kmm.showcase.Greeting
-import android.widget.TextView
-
-fun greet(): String {
-    return Greeting().greeting()
-}
+import androidx.appcompat.app.AppCompatActivity
+import co.nimblehq.kmm.showcase.android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.tbMain)
     }
 }
