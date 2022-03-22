@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvTest"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TESTTT"/>
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_panel"
+        android:elevation="4dp"
+        android:padding="@dimen/margin_default"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvJobDetailsBottomPanelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_details_bottom_panel_title"
+            android:textColor="@color/blackRussian"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvJobDetailsBottomPanelPriceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/job_details_price_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvJobDetailsBottomPanelTitle" />
+
+        <TextView
+            android:id="@+id/tvJobDetailsBottomPanelPriceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_details_price_value"
+            android:textColor="@color/mediumSeaGreen"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvJobDetailsBottomPanelPriceLabel"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            style="@style/AppButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_medium"
+            android:text="@string/action_accept"
+            app:layout_constraintTop_toBottomOf="@id/tvJobDetailsBottomPanelPriceLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
