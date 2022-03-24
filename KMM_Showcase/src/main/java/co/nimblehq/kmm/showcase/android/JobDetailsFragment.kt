@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import co.nimblehq.kmm.showcase.android.base.BaseFragment
 import co.nimblehq.kmm.showcase.android.databinding.FragmentJobDetailsBinding
 import co.nimblehq.kmm.showcase.data.RepositoryImpl
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
 
-    private val mainScope = MainScope()
     private val repository = RepositoryImpl()
 
     override fun getViewBinding(
@@ -29,19 +27,15 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
         setupToolbar(R.string.job_details_title)
 
         // TODO Display response in integration task
+        Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
         mainScope.launch {
             kotlin.runCatching {
-                repository.getJobDetails()
+                repository.getJobDetail()
             }.onSuccess {
-                binding.titleTv.text = it.message
+                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
             }.onFailure {
-                binding.titleTv.text = it.localizedMessage
+                Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mainScope.cancel()
     }
 }

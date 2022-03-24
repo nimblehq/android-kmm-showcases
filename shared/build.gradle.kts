@@ -39,8 +39,6 @@ kotlin {
 
                 // Serialization
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.2")
-                implementation("io.ktor:ktor-client-gson:$ktorVersion")
-                implementation("io.ktor:ktor-client-jackson:$ktorVersion")
             }
         }
         val commonTest by getting {

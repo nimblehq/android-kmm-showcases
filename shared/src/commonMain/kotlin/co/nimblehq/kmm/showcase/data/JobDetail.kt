@@ -5,11 +5,11 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Data(
-    @SerialName("data") val data: JobDetails
+    @SerialName("data") val data: JobDetail
 )
 
 @Serializable
-data class JobDetails(
+data class JobDetail(
     @SerialName("id") val id: String? = null,
     @SerialName("confirmed_at") val confirmedAt: Int? = null,
     @SerialName("created_at") val createdAt: Int? = null,
@@ -20,7 +20,7 @@ data class JobDetails(
     @SerialName("proposed_at") val proposedAt: String? = null,
     @SerialName("status") val status: String? = null,
     @SerialName("updated_at") val updatedAt: Int? = null,
-    @SerialName("farmer") val farmer: Farmer? = Farmer(),
+    @SerialName("farmer") val farmer: User? = User(),
     @SerialName("job_substance_type") val jobSubstanceType: JobSubstanceType? = JobSubstanceType(),
     @SerialName("plot") val plot: Plot? = Plot(),
     @SerialName("time_slot") val timeSlot: TimeSlot? = TimeSlot(),
@@ -28,7 +28,7 @@ data class JobDetails(
 )
 
 @Serializable
-data class Farmer(
+data class User(
     @SerialName("id") val id: String? = null,
     @SerialName("email") val email: String? = null,
     @SerialName("first_name") val firstName: String? = null,
@@ -40,7 +40,6 @@ data class Farmer(
 
 @Serializable
 data class SubstanceType(
-    @SerialName("type") val type: String? = null,
     @SerialName("id") val id: String? = null,
     @SerialName("icon_active_url") val iconActiveUrl: String? = null,
     @SerialName("icon_inactive_url") val iconInactiveUrl: String? = null,
@@ -58,7 +57,6 @@ data class JobSubstanceType(
 
 @Serializable
 data class Region(
-    @SerialName("type") val type: String? = null,
     @SerialName("id") val id: String? = null,
     @SerialName("maximum_price") val maximumPrice: Int? = null,
     @SerialName("minimum_price") val minimumPrice: Int? = null,
@@ -82,7 +80,6 @@ data class Plot(
 
 @Serializable
 data class TimeSlot(
-    @SerialName("type") val type: String? = null,
     @SerialName("id") val id: String? = null,
     @SerialName("name") val name: String? = null,
     @SerialName("time_slot_end_at") val timeSlotEndAt: String? = null,

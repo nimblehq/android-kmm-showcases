@@ -1,14 +1,19 @@
 package co.nimblehq.kmm.showcase.android.base
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import co.nimblehq.kmm.showcase.android.MainActivity
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
+    protected val mainScope = MainScope()
     private var _binding: ViewBinding? = null
 
     @Suppress("UNCHECKED_CAST")
@@ -38,5 +43,10 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainScope.cancel()
     }
 }

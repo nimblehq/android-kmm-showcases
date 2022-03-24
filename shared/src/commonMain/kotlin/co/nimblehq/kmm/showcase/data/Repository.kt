@@ -9,19 +9,20 @@ private const val API_HOST = "https://e582a6ab-90d0-4766-96f2-95efcb61de18.mock.
 private const val API_ENDPOINT = "/api/v1/jobs/a46978ca-a359-11ec-ae63-02ceb8cb4b90"
 
 interface Repository {
-    suspend fun getJobDetails(): JobDetails
+    suspend fun getJobDetail(): JobDetail
 }
 
 class RepositoryImpl() : Repository {
 
     private val api = Api()
 
-    override suspend fun getJobDetails(): JobDetails {
-        // Workaround to resolve parsing exception: https://stackoverflow.com/a/65105432
+    override suspend fun getJobDetail(): JobDetail {
+        // FIXME Workaround to resolve parsing exception: https://stackoverflow.com/a/65105432
+        val url = API_HOST + API_ENDPOINT
         return try {
-            api.httpClient.get<Data>(API_HOST + API_ENDPOINT).data
+            api.httpClient.get<Data>(url).data
         } catch (e: NoTransformationFoundException) {
-            val jsonString: String = api.httpClient.get(API_HOST + API_ENDPOINT)
+            val jsonString: String = api.httpClient.get(url)
             val json = Json { ignoreUnknownKeys = true }
             json.decodeFromString<Data>(jsonString).data
         }
