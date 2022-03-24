@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="job_details_title">Job Detail</string>
+    <string name="job_details_bottom_panel_title">Get this job to know more about farmer contact information</string>
+    <string name="job_details_price_label">Price</string>
+    <string name="job_details_price_value">80-95 Baht</string>
+    <string name="action_accept">Accept</string>
+</resources>
