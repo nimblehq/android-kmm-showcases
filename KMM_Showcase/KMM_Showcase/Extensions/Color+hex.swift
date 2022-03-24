@@ -21,4 +21,6 @@ extension Color {
     
     static let blackColor = Color(hex: 0x171923)
     static let greenColor = Color(hex: 0x2BC65D)
+    static let greyColor = Color(hex: 0xA0AEC0)
+    static let offWhite = Color(hex: 0xFAFAFA)
 }

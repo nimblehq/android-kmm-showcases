@@ -16,17 +16,20 @@ struct BackButton: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            HStack {
+            HStack(spacing: 20) {
                 Image("ic_back")
                     .resizable()
                     .frame(width: 20, height: 20)
                 Text(text)
                     .foregroundColor(.blackColor)
                     .fontWeight(.bold)
+                    .font(.title3)
+                Spacer()
                 
             }
+//            .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.white)
+//            .background(Color.white)
         }
     }
 }
@@ -35,7 +38,7 @@ struct FatGreenButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
-            .font(.title)
+            .font(.title2)
             .foregroundColor(.white)
             .padding()
             .background(Color.greenColor)
