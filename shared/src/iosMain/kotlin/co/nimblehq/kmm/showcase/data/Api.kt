@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.showcase
+package co.nimblehq.kmm.showcase.data
 
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier

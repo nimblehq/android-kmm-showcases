@@ -1,11 +1,12 @@
 package co.nimblehq.kmm.showcase.android
 
 import android.os.Bundle
-import android.view.*
-import android.widget.Toast
-import co.nimblehq.kmm.showcase.Api
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import co.nimblehq.kmm.showcase.android.base.BaseFragment
 import co.nimblehq.kmm.showcase.android.databinding.FragmentJobDetailsBinding
+import co.nimblehq.kmm.showcase.data.RepositoryImpl
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
 
     private val mainScope = MainScope()
-    private val api = Api()
+    private val repository = RepositoryImpl()
 
     override fun getViewBinding(
         layoutInflater: LayoutInflater,
@@ -27,16 +28,15 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar(R.string.job_details_title)
 
+        // TODO Display response in integration task
         mainScope.launch {
             kotlin.runCatching {
-                api.todoTask()
+                repository.getJobDetails()
             }.onSuccess {
-                binding.titleTv.text = it
+                binding.titleTv.text = it.message
             }.onFailure {
                 binding.titleTv.text = it.localizedMessage
             }
-
-            Toast.makeText(requireContext(), "hello2", Toast.LENGTH_LONG).show()
         }
     }
 
