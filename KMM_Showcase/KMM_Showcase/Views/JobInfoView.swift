@@ -1,28 +1,12 @@
 //
-//  JobDetailsView.swift
+//  JobInfoView.swift
 //  KMM_Showcase
 //
-//  Created by Edgars Simanovskis on 22/3/2565 BE.
+//  Created by Edgars Simanovskis on 24/3/2565 BE.
 //  Copyright © 2565 BE orgName. All rights reserved.
 //
 
 import SwiftUI
-
-struct JobDetailsView: View {
-    var jobDetails = "Job Detail"
-    
-    var body: some View {
-        VStack() {
-            JobInfoView()
-            BottomView()
-        }
-        .background(Color.offWhite.ignoresSafeArea())
-        .ignoresSafeArea()
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: BackButton(text: jobDetails))
-        
-    }
-}
 
 struct JobInfoView: View {
     var price = "80-95 Baht"
@@ -36,8 +20,8 @@ struct JobInfoView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            Spacer(minLength: 90)
             VStack(alignment: .leading) {
+                // Price by area HStack
                 HStack {
                     Text("Price by area")
                         .font(.subheadline)
@@ -54,19 +38,16 @@ struct JobInfoView: View {
                 Text("Date time")
                     .font(.headline)
                     .bold()
-                
-                VStack {
-                    HStack {
-                        Text(date)
-                            .font(.headline)
-                            .bold()
-                        Spacer()
-                        Text(time)
-                            .font(.footnote)
-                            .foregroundColor(Color.greyColor)
-                    }
-                    .frame(maxWidth: .infinity)
+                HStack {
+                    Text(date)
+                        .font(.headline)
+                        .bold()
+                    Spacer()
+                    Text(time)
+                        .font(.footnote)
+                        .foregroundColor(Color.greyColor)
                 }
+                .frame(maxWidth: .infinity)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.white)
@@ -132,42 +113,5 @@ struct JobInfoView: View {
             .padding()
             .frame(maxWidth: .infinity)
         }
-    }
-}
-
-struct BottomView: View {
-    var description = "Get this job to know more about farmer contact information"
-    var price = "80-95 Baht"
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(description)
-                .fontWeight(.semibold)
-                .padding(.vertical)
-            HStack {
-                Text("Price")
-                    .fontWeight(.light)
-                Spacer()
-                Text(price)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(.greenColor)
-            }
-            Button("Accept", action: {})
-                .buttonStyle(FatGreenButton())
-                .padding(.bottom, 10)
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(40)
-        .overlay(
-            RoundedRectangle(cornerRadius: 40)
-                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-        )
-    }
-}
-
-struct JobDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        JobDetailsView()
     }
 }
