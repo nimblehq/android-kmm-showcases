@@ -7,5 +7,5 @@ pluginManagement {
 }
 
 rootProject.name = "KMMShowcase"
-include(":KMM_Showcase")
+include(":androidApp")
 include(":shared")
