@@ -5,12 +5,15 @@ struct ContentView: View {
 	let greet = Greeting().greeting()
 
 	var body: some View {
-		Text(greet)
-	}
-}
-
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
+        NavigationView {
+            VStack {
+                NavigationLink(destination: JobDetailsView()) {
+                    VStack {
+                        Text(greet)
+                        Text("show job details")
+                    }
+                }
+            }
+        }
 	}
 }
