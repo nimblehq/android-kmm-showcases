@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		172BA6CD27E8E75800D7BF93 /* JobDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172BA6CC27E8E75800D7BF93 /* JobDetailsView.swift */; };
+		172BA6D027E8FF5100D7BF93 /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172BA6CF27E8FF5100D7BF93 /* Color+hex.swift */; };
+		172BA6D327E906FE00D7BF93 /* FatGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172BA6D227E906FE00D7BF93 /* FatGreenButton.swift */; };
+		17CB516227ECB41400448E87 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB516127ECB41400448E87 /* NavBar.swift */; };
+		17CB516427ECB48200448E87 /* AcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB516327ECB48200448E87 /* AcceptView.swift */; };
+		17CB516627ECB4B500448E87 /* JobInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB516527ECB4B500448E87 /* JobInfoView.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		8B8ADA15582EE851DC55A4DD /* Pods_KMM_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D28F703637776CC275E5DC /* Pods_KMM_Showcase.framework */; };
@@ -18,6 +24,12 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16AF4CC5C0DDB8EE9068AFE2 /* Pods-KMM_Showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMM_Showcase.debug.xcconfig"; path = "Target Support Files/Pods-KMM_Showcase/Pods-KMM_Showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		172BA6CC27E8E75800D7BF93 /* JobDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsView.swift; sourceTree = "<group>"; };
+		172BA6CF27E8FF5100D7BF93 /* Color+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
+		172BA6D227E906FE00D7BF93 /* FatGreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatGreenButton.swift; sourceTree = "<group>"; };
+		17CB516127ECB41400448E87 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		17CB516327ECB48200448E87 /* AcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptView.swift; sourceTree = "<group>"; };
+		17CB516527ECB4B500448E87 /* JobInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoView.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* KMM_Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMM_Showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,13 +66,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		172BA6CE27E8FF1100D7BF93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				172BA6D227E906FE00D7BF93 /* FatGreenButton.swift */,
+				172BA6CF27E8FF5100D7BF93 /* Color+hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17CB516027ECB3DA00448E87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF82242A565900829871 /* ContentView.swift */,
+				172BA6CC27E8E75800D7BF93 /* JobDetailsView.swift */,
+				17CB516127ECB41400448E87 /* NavBar.swift */,
+				17CB516327ECB48200448E87 /* AcceptView.swift */,
+				17CB516527ECB4B500448E87 /* JobInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		52460CDE0667CF66C1D1F970 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				16AF4CC5C0DDB8EE9068AFE2 /* Pods-KMM_Showcase.debug.xcconfig */,
 				945C3B1B3BB6A9D59D0DDB54 /* Pods-KMM_Showcase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,8 +117,9 @@
 		7555FF7D242A565900829871 /* KMM_Showcase */ = {
 			isa = PBXGroup;
 			children = (
+				17CB516027ECB3DA00448E87 /* Views */,
+				172BA6CE27E8FF1100D7BF93 /* Extensions */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
@@ -190,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172BA6D327E906FE00D7BF93 /* FatGreenButton.swift in Sources */,
+				17CB516427ECB48200448E87 /* AcceptView.swift in Sources */,
+				172BA6CD27E8E75800D7BF93 /* JobDetailsView.swift in Sources */,
+				172BA6D027E8FF5100D7BF93 /* Color+hex.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				17CB516627ECB4B500448E87 /* JobInfoView.swift in Sources */,
+				17CB516227ECB41400448E87 /* NavBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
