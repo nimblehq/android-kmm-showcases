@@ -5,4 +5,6 @@
     <string name="job_details_price_label">Price</string>
     <string name="job_details_price_value">80-95 Baht</string>
     <string name="action_accept">Accept</string>
+    <string name="job_detail_price_by_area">Price by area</string>
+    <string name="job_detail_date_time">Date time</string>
 </resources>
