@@ -2,51 +2,105 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/margin_default">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvJotDetailPriceByAreaTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_default"
-        android:text="@string/job_detail_price_by_area"
-        android:textColor="@color/mischka"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvJotDetailPriceByAreaValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_default"
-        android:text="@string/job_details_price_value"
-        android:textColor="@color/mediumSeaGreen"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@id/tvJotDetailPriceByAreaTitle"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tvJotDetailDateTime"
-        style="@style/AppTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="@string/job_detail_date_time"
-        app:layout_constraintStart_toStartOf="@id/tvJotDetailPriceByAreaTitle"
-        app:layout_constraintTop_toBottomOf="@id/tvJotDetailPriceByAreaTitle" />
-
-    <include
-        layout="@layout/layout_job_details_date_time"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_default"
-        android:layout_marginTop="@dimen/margin_small"
-        app:layout_constraintTop_toBottomOf="@id/tvJotDetailDateTime" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/clJobDetailsBottomPanel"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_default">
+
+            <TextView
+                android:id="@+id/tvJobDetailsPriceByAreaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:text="@string/job_details_price_by_area"
+                android:textColor="@color/mischka"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvJobDetailsPriceByAreaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:text="@string/job_details_price_value"
+                android:textColor="@color/mediumSeaGreen"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvJobDetailsPriceByAreaTitle"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                style="@style/AppTitle"
+                android:id="@+id/tvJobDetailsDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/job_details_date_time"
+                app:layout_constraintStart_toStartOf="@id/tvJobDetailsPriceByAreaTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvJobDetailsPriceByAreaTitle" />
+
+            <include
+                android:id="@+id/lJobDetailsDateTime"
+                layout="@layout/layout_job_details_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_small"
+                app:layout_constraintTop_toBottomOf="@id/tvJobDetailsDateTime" />
+
+            <TextView
+                style="@style/AppTitle"
+                android:id="@+id/tvJobDetailPlotInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/job_details_plot_information"
+                app:layout_constraintStart_toStartOf="@id/tvJobDetailsPriceByAreaTitle"
+                app:layout_constraintTop_toBottomOf="@id/lJobDetailsDateTime" />
+
+            <include
+                android:id="@+id/lJobDetailsPlotInfo"
+                layout="@layout/layout_job_details_plot_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginTop="@dimen/margin_small"
+                app:layout_constraintTop_toBottomOf="@id/tvJobDetailPlotInfo" />
+
+            <TextView
+                style="@style/AppTitle"
+                android:id="@+id/tvJobDetailMessageToPilotTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/job_details_message_to_pilot_title"
+                app:layout_constraintStart_toStartOf="@id/tvJobDetailsPriceByAreaTitle"
+                app:layout_constraintTop_toBottomOf="@id/lJobDetailsPlotInfo" />
+
+            <TextView
+                style="@style/AppInfo"
+                android:id="@+id/tvJobDetailMessageToPilotDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/job_details_message_to_pilot_title"
+                app:layout_constraintStart_toStartOf="@id/tvJobDetailsPriceByAreaTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvJobDetailMessageToPilotTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clJobDetailsBottomPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_bottom_panel"
@@ -55,12 +109,11 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
+            style="@style/AppTitle"
             android:id="@+id/tvJobDetailsBottomPanelTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/job_details_bottom_panel_title"
-            android:textColor="@color/blackRussian"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="action_accept">Accept</string>
     <string name="job_details_title">Job Detail</string>
     <string name="job_details_bottom_panel_title">Get this job to know more about farmer contact information</string>
     <string name="job_details_price_label">Price</string>
     <string name="job_details_price_value">80-95 Baht</string>
-    <string name="action_accept">Accept</string>
-    <string name="job_detail_price_by_area">Price by area</string>
-    <string name="job_detail_date_time">Date time</string>
+    <string name="job_details_price_by_area">Price by area</string>
+    <string name="job_details_date_time">Date time</string>
+    <string name="job_details_plot_information">Plot Information</string>
+    <string name="job_details_plot_info_distance_label">Distance</string>
+    <string name="job_details_plot_info_area_label">Area</string>
+    <string name="job_details_plot_info_distance_value">33 km</string>
+    <string name="job_details_plot_info_area_value">70 m2</string>
+    <string name="job_details_plot_info_address_label">Address</string>
+    <string name="job_details_plot_info_crop_type_label">Crop type</string>
+    <string name="job_details_message_to_pilot_title">Message to pilot</string>
 </resources>

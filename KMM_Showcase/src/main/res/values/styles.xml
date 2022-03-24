@@ -19,7 +19,17 @@
 
     <style name="AppTitle">
         <item name="android:textColor">@color/blackRussian</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/text_default</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppLabel">
+        <item name="android:textColor">@color/mischka</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="AppInfo">
+        <item name="android:textColor">@color/blackRussian</item>
+        <item name="android:textSize">@dimen/text_medium</item>
     </style>
 </resources>
