@@ -1,14 +1,12 @@
 package co.nimblehq.kmm.showcase.android
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import co.nimblehq.kmm.showcase.android.base.BaseFragment
 import co.nimblehq.kmm.showcase.android.databinding.FragmentJobDetailsBinding
-import co.nimblehq.kmm.showcase.domain.GetJobDetailUseCase
-import co.nimblehq.kmm.showcase.domain.GetJobDetailUseCaseImpl
+import co.nimblehq.kmm.showcase.android.extensions.formatDate
+import co.nimblehq.kmm.showcase.domain.*
 import kotlinx.coroutines.launch
 
 class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
@@ -27,15 +25,43 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar(R.string.job_details_title)
 
-        // TODO Display response in integration task
         Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
         mainScope.launch {
             kotlin.runCatching {
                 getJobDetailUseCase.execute()
             }.onSuccess {
                 Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                displayJobDetails(it)
             }.onFailure {
                 Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun displayJobDetails(jobDetailUiModel: JobDetailUiModel) {
+        with(binding) {
+            with(jobDetailUiModel) {
+                listOf(
+                    tvJobDetailsPriceByAreaValue,
+                    tvJobDetailsBottomPanelPriceValue
+                ).forEach {
+                    it.text = getString(R.string.job_details_price_by_area_value, minimumPrice, maximumPrice)
+                }
+
+                lJobDetailsDateTime.run {
+                    tvJobDetailsDate.text = confirmedAt.formatDate()
+                    tvJobDetailsTime.text =
+                        getString(R.string.job_details_date_time_time_value, timeSlotStart, timeSlotEnd)
+                }
+
+                lJobDetailsPlotInfo.run {
+                    tvJobDetailsPlotInfoSizeValue.text =
+                        getString(R.string.job_details_plot_info_area_value, plotSize)
+                    tvJobDetailsPlotInfoAddressValue.text = plotAddress
+                    tvJobDetailsPlotInfoCropTypeValue.text = plotCropType
+                }
+
+                tvJobDetailMessageToPilotDescription.text = message
             }
         }
     }

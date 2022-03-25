@@ -6,10 +6,13 @@
     <string name="job_details_price_label">Price</string>
     <string name="job_details_price_by_area">Price by area</string>
     <string name="job_details_date_time">Date time</string>
+    <string name="job_details_date_time_time_value">%s - %s</string>
     <string name="job_details_plot_information">Plot Information</string>
     <string name="job_details_plot_info_distance_label">Distance</string>
     <string name="job_details_plot_info_area_label">Area</string>
+    <string name="job_details_plot_info_area_value">%s m2</string>
     <string name="job_details_plot_info_address_label">Address</string>
     <string name="job_details_plot_info_crop_type_label">Crop type</string>
     <string name="job_details_message_to_pilot_title">Message to pilot</string>
+    <string name="job_details_price_by_area_value">%s - %s Baht</string>
 </resources>

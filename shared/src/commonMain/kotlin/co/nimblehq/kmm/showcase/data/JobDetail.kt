@@ -11,7 +11,7 @@ data class Data(
 @Serializable
 data class JobDetail(
     @SerialName("id") val id: String? = null,
-    @SerialName("confirmed_at") val confirmedAt: Int? = null,
+    @SerialName("confirmed_at") val confirmedAt: Long? = null,
     @SerialName("created_at") val createdAt: Int? = null,
     @SerialName("expire_at") val expireAt: Int? = null,
     @SerialName("maximum_price") val maximumPrice: Int? = null,

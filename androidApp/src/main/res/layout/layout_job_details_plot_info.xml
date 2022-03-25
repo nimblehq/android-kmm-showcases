@@ -44,7 +44,7 @@
 
         <TextView
             style="@style/AppLabel"
-            android:id="@+id/tvJobDetailsPlotInfoAreaLabel"
+            android:id="@+id/tvJobDetailsPlotInfoSizeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/job_details_plot_info_area_label"
@@ -53,7 +53,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvJobDetailsPlotInfoAreaValue"
+            android:id="@+id/tvJobDetailsPlotInfoSizeValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
@@ -62,7 +62,7 @@
             android:textSize="@dimen/text_default"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/gJobDetailsPlotInfo"
-            app:layout_constraintTop_toBottomOf="@id/tvJobDetailsPlotInfoAreaLabel" />
+            app:layout_constraintTop_toBottomOf="@id/tvJobDetailsPlotInfoSizeLabel" />
 
         <TextView
             style="@style/AppLabel"
