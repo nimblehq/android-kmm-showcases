@@ -32,4 +32,8 @@
         <item name="android:textColor">@color/blackRussian</item>
         <item name="android:textSize">@dimen/text_medium</item>
     </style>
+
+    <style name="AppProgressBar" parent="AppTheme">
+        <item name="colorAccent">@color/mediumSeaGreen</item>
+    </style>
 </resources>

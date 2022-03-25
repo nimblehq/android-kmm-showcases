@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/white"
     android:elevation="4dp"
     app:cardCornerRadius="40dp"
@@ -57,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="70 m2"
+            tools:text="70 m2"
             android:textColor="@color/mediumSeaGreen"
             android:textSize="@dimen/text_default"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="123 NimbleHQ village, Bangkok, 10110"
+            tools:text="123 NimbleHQ village, Bangkok, 10110"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvJobDetailsPlotInfoAddressLabel" />
 
@@ -100,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="Corn"
+            tools:text="Corn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvJobDetailsPlotInfoCropTypeLabel" />
 
