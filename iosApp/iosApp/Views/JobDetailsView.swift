@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct JobDetailsView: View {
+    @ObservedObject var viewModel = JobDetailsViewModel()
     var navTitle = "Job Detail"
     
     var body: some View {
@@ -20,7 +21,9 @@ struct JobDetailsView: View {
         .background(Color.offWhite.ignoresSafeArea())
         .ignoresSafeArea()
         .navigationBarHidden(true)
-        
+        .onAppear {
+            self.viewModel.getDetails()
+        }
     }
 }
 
