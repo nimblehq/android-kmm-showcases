@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,9 +12,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clJobDetailsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/margin_default">
+            android:paddingTop="@dimen/margin_default"
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <TextView
                 android:id="@+id/tvJobDetailsPriceByAreaTitle"
@@ -39,8 +43,8 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                style="@style/AppTitle"
                 android:id="@+id/tvJobDetailsDateTime"
+                style="@style/AppTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
@@ -58,8 +62,8 @@
                 app:layout_constraintTop_toBottomOf="@id/tvJobDetailsDateTime" />
 
             <TextView
-                style="@style/AppTitle"
                 android:id="@+id/tvJobDetailPlotInfo"
+                style="@style/AppTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
@@ -77,8 +81,8 @@
                 app:layout_constraintTop_toBottomOf="@id/tvJobDetailPlotInfo" />
 
             <TextView
-                style="@style/AppTitle"
                 android:id="@+id/tvJobDetailMessageToPilotTitle"
+                style="@style/AppTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
@@ -87,8 +91,8 @@
                 app:layout_constraintTop_toBottomOf="@id/lJobDetailsPlotInfo" />
 
             <TextView
-                style="@style/AppInfo"
                 android:id="@+id/tvJobDetailMessageToPilotDescription"
+                style="@style/AppInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
@@ -109,8 +113,8 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            style="@style/AppTitle"
             android:id="@+id/tvJobDetailsBottomPanelTitle"
+            style="@style/AppTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/job_details_bottom_panel_title"
@@ -129,12 +133,12 @@
             android:id="@+id/tvJobDetailsBottomPanelPriceValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="80-95 Baht"
             android:textColor="@color/mediumSeaGreen"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@id/tvJobDetailsBottomPanelPriceLabel"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="80-95 Baht" />
 
         <Button
             style="@style/AppButton"
@@ -145,4 +149,14 @@
             app:layout_constraintTop_toBottomOf="@id/tvJobDetailsBottomPanelPriceLabel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/pbJobDetailsLoading"
+        android:theme="@style/AppProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
