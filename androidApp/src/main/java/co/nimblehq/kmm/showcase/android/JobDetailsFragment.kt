@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import co.nimblehq.kmm.showcase.android.base.BaseFragment
 import co.nimblehq.kmm.showcase.android.databinding.FragmentJobDetailsBinding
-import co.nimblehq.kmm.showcase.data.RepositoryImpl
+import co.nimblehq.kmm.showcase.domain.GetJobDetailUseCase
+import co.nimblehq.kmm.showcase.domain.GetJobDetailUseCaseImpl
 import kotlinx.coroutines.launch
 
 class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
 
-    private val repository = RepositoryImpl()
+    private val getJobDetailUseCase: GetJobDetailUseCase = GetJobDetailUseCaseImpl()
 
     override fun getViewBinding(
         layoutInflater: LayoutInflater,
@@ -30,7 +31,7 @@ class JobDetailsFragment : BaseFragment<FragmentJobDetailsBinding>() {
         Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
         mainScope.launch {
             kotlin.runCatching {
-                repository.getJobDetail()
+                getJobDetailUseCase.execute()
             }.onSuccess {
                 Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
             }.onFailure {
