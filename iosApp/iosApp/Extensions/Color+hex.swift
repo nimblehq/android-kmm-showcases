@@ -1,6 +1,6 @@
 //
 //  Color+hex.swift
-//  KMM_Showcase
+//  iosApp
 //
 //  Created by Edgars Simanovskis on 22/3/2565 BE.
 //  Copyright © 2565 BE orgName. All rights reserved.

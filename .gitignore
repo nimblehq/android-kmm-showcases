@@ -9,5 +9,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-*.lock
 xcuserdata

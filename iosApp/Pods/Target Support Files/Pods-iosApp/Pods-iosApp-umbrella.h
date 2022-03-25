@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_KMM_ShowcaseVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_KMM_ShowcaseVersionString[];
+FOUNDATION_EXPORT double Pods_iosAppVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_iosAppVersionString[];
 
